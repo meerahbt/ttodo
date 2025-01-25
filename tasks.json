@@ -1,7 +1,9 @@
 {
     "todo": [
-        "code"
+        "write journal"
     ],
-    "doing": [],
+    "doing": [
+        "write plan"
+    ],
     "done": []
 }
