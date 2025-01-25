@@ -1,9 +1,11 @@
 {
     "todo": [
-        "write journal"
+        "senior sketches",
+        "professional practice homework",
+        "ssg project"
     ],
     "doing": [
-        "write plan"
+        "finish ttodo program"
     ],
     "done": []
 }

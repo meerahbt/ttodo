@@ -66,7 +66,10 @@ def main():
         add_task(args.task, args.category, data)
         print_list(args.category, data)
     elif args.category == "doing" and args.remove == False:
-        move_task("todo", "doing", args.task, data)
+        if args.task not in args.category:
+            add_task(args.task, args.category, data)
+        else:
+            move_task("todo", "doing", args.task, data)
         print_list(args.category, data)
     elif args.category == "done" and args.remove == False:
         move_task("doing", "done", args.task, data)
@@ -91,7 +94,8 @@ def add_task(task, category, data):
 def print_list(category, data):
     if category in data:
         for task in data[category]:
-            print(f"{data[category].index(task) + 1}. {category.upper()} {task}")
+            # print(f"{data[category].index(task) + 1}. {category.upper()} {task}")
+            print(f"{category.upper()} {task}")
 
 def remove_task(task, category, data):
     if task in data[category]:
@@ -107,5 +111,12 @@ def move_task(from_category, to_category, task, data):
     else:
         add_task(task, to_category, data)
         remove_task(task, from_category, data)
+
+
+# features to add:
+# add more than one task at a time 
+# manage from index of task?
+# remove all 
+
 
 main()
